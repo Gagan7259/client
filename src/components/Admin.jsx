@@ -13,7 +13,7 @@ const Admin = () => {
     setStudent({ ...student, [event.target.name]: event.target.value });
   };
   let submitHandler = (event) => {
-    let url = 'https://localhost:8080/apis/student'
+    let url = 'http://localhost:8080/apis/student'
     axios
       .post(url, student)
       .then(() => {})
