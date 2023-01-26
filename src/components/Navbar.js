@@ -9,8 +9,11 @@ const Navbar = () => {
       <div className="ml-auto">
       <ul className="navbar-nav">
       <li className="nav-list"> <Link className="nav-link" to="/students">Students</Link> </li>
+      <li className="nav-list"> <Link className="nav-link" to="/admin">Admin</Link> </li>
+
       </ul>
       </div>
+      
     </nav>
   );
 };

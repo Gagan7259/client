@@ -13,24 +13,35 @@ const Student = () => {
   }, []);
   return (
     <div className="container">
-      <h1>Student</h1>
-      <pre>{JSON.stringify(students)}</pre>
+      <div>
+        <center>
+          {" "}
+          <h1>Student Data</h1>
+        </center>{" "}
+      </div>
       <div className="row">
-        {
-          students.length > 0 ? 
+        {students.length > 0 ? (
           <>
             {students.map((student) => {
               return (
                 <div className="col-md-3">
                   <div className="card">
-                    <div className="card-header"></div>
+                    <div className="card-header">
+                      <h3>Student Details</h3>
+                    </div>
                     <div className="card-body">
                       <ul className="list-group">
-                        <li className="list-group-item bg-primary">{student.id}</li>
-                        <li className="list-group-item bg-danger">{student.name}</li>
-                        <li className="list-group-item bg-secondary">{student.age}</li>
-                        <li className="list-group-item bg-primary">{student.subject}</li>
-                        <li className="list-group-item bg-danger">{student.standard}</li>
+                        <li className="list-group-item "> Id:{student.id}</li>
+                        <li className="list-group-item ">
+                          Name:{student.name}
+                        </li>
+                        <li className="list-group-item ">Age:{student.age}</li>
+                        <li className="list-group-item ">
+                          Subject:{student.subject}
+                        </li>
+                        <li className="list-group-item ">
+                          Standard:{student.standard}
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -38,7 +49,7 @@ const Student = () => {
               );
             })}
           </>
-         : null}
+        ) : null}
       </div>
     </div>
   );
