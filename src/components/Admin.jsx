@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-
 const Admin = () => {
   let [student, setStudent] = React.useState({
     id: "",
@@ -23,13 +22,13 @@ const Admin = () => {
   return (
     <div className="container">
       <div className="row">
-        <h1>Admin</h1>
+        <h1 className="admin">Admin</h1>
       </div>
       <div className="row">
         <div className="col-md-5">
           <div className="card">
             <div className="card-header">
-              <h2>Collect Student Info</h2>
+              <h2 className="data">Collect Student Info</h2>
               <pre>{JSON.stringify(student)}</pre>
             </div>
             <div className="card-body">

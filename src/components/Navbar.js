@@ -7,13 +7,26 @@ const Navbar = () => {
         Student details
       </Link>
       <div className="ml-auto">
-      <ul className="navbar-nav">
-      <li className="nav-list"> <Link className="nav-link" to="/students">Students</Link> </li>
-      <li className="nav-list"> <Link className="nav-link" to="/admin">Admin</Link> </li>
-
-      </ul>
+        <ul className="navbar-nav">
+          <li className="nav-list">
+            {" "}
+            <Link className="nav-link" to="/students">
+              Students
+            </Link>
+          </li>
+          <li className="nav-list">
+            <Link className="nav-link" to="/admin">
+              Admin
+            </Link>{" "}
+          </li>
+          <li className="nav-list">
+            {" "}
+            <Link className="nav-link" to="/studentlist">
+              StudentList
+            </Link>{" "}
+          </li>
+        </ul>
       </div>
-      
     </nav>
   );
 };
