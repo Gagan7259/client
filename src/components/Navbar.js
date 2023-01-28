@@ -25,6 +25,12 @@ const Navbar = () => {
               StudentList
             </Link>{" "}
           </li>
+          <li className="nav-list">
+            {" "}
+            <Link className="nav-link" to="/editl">
+              Edit
+            </Link>{" "}
+          </li>
         </ul>
       </div>
     </nav>

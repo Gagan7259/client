@@ -1,9 +1,10 @@
-import React from "react";
+import React,{useEffect} from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 const StudentList = () => {
   let [students, setstudents] = React.useState([]);
-  React.useEffect(() => {
+  let navigate = useNavigate();
+  useEffect(() => {
     axios
       .get("http://localhost:8080/apis/students")
       .then((response) => {
@@ -14,12 +15,13 @@ const StudentList = () => {
   let deletestudent = (id) => {
     console.log("hello");
     let url = `http://localhost:8080/apis/student/${id}`;
-    axios.delete(url).then(()=>{}).catch();
+    axios
+      .delete(url)
+      .then(() => {})
+      navigate(0)
+      .catch();
   };
-  let updatestudent=()=>{
-    let url=`http://localhost:8080/apis/student`
-    axios.put(url).then().catch();
-  }
+  
   return (
     <div className="container">
       <h1>Student List</h1>
@@ -37,7 +39,7 @@ const StudentList = () => {
               </tr>
             </thead>
             <tbody>
-              {students.length > 0 ? 
+              {students.length > 0 ? (
                 <>
                   {students.map((student, index) => {
                     return (
@@ -48,20 +50,26 @@ const StudentList = () => {
                         <td>{student.subject}</td>
                         <td>{student.standard}</td>
                         <td>
-                          <Link onClick={deletestudent.bind(this,student.id)} className=" btn btn-danger mr-1 ">
+                          <Link
+                            onClick={deletestudent.bind(this, student.id)}
+                            className=" btn btn-danger mr-1 "
+                          >
                             Delete
                           </Link>{" "}
-                          <Link onClick={updatestudent.bind(student.id)} className=" btn btn-warning mr-1">
+                          <Link 
+                           to={`/editl`} className=" btn btn-warning mr-1">
                             Update
-                          </Link>
+                          </Link> 
                         </td>
                       </tr>
                     );
                   })}
                 </>
-               : null}
+              ) : null}
             </tbody>
+            
           </table>
+          
         </div>
       </div>
     </div>
