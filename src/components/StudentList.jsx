@@ -1,6 +1,6 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
-import { Link,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const StudentList = () => {
   let [students, setstudents] = React.useState([]);
   let navigate = useNavigate();
@@ -15,13 +15,10 @@ const StudentList = () => {
   let deletestudent = (id) => {
     console.log("hello");
     let url = `http://localhost:8080/apis/student/${id}`;
-    axios
-      .delete(url)
-      .then(() => {})
-      navigate(0)
-      .catch();
+    axios.delete(url).then(() => {});
+    navigate(0).catch();
   };
-  
+
   return (
     <div className="container">
       <h1>Student List</h1>
@@ -56,10 +53,9 @@ const StudentList = () => {
                           >
                             Delete
                           </Link>{" "}
-                          <Link 
-                           to={`/editl`} className=" btn btn-warning mr-1">
+                          <Link to={`/editl`} className=" btn btn-warning mr-1">
                             Update
-                          </Link> 
+                          </Link>
                         </td>
                       </tr>
                     );
@@ -67,9 +63,7 @@ const StudentList = () => {
                 </>
               ) : null}
             </tbody>
-            
           </table>
-          
         </div>
       </div>
     </div>
